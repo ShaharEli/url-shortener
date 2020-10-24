@@ -74,7 +74,7 @@ function App() {
       });
       const newUrl = {
         originalUrl: postedUrlResult.url,
-        link: `http://localhost:3001/${postedUrlResult.prefix}`,
+        link: `https://url-shortener-unlimited.herokuapp.com/${postedUrlResult.prefix}`,
       };
       setShortenedUrls((prev) => [newUrl, ...prev]);
       localStorage.setItem(
