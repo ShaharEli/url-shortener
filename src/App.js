@@ -67,14 +67,11 @@ function App() {
       alert("Please enter valid URL");
     }
     try {
-      const { data: postedUrlResult } = await axios.post(
-        "http://localhost:3001/",
-        {
-          hello: "dedede",
-          url,
-          prefix,
-        }
-      );
+      const { data: postedUrlResult } = await axios.post("/", {
+        hello: "dedede",
+        url,
+        prefix,
+      });
       const newUrl = {
         originalUrl: postedUrlResult.url,
         link: `http://localhost:3001/${postedUrlResult.prefix}`,

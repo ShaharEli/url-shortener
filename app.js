@@ -6,6 +6,7 @@ const rateLimit = require("express-rate-limit");
 require("dotenv").config();
 const { nanoid } = require("nanoid");
 const { urlScheme, Url } = require("./helpers");
+const path = require("path");
 
 const app = express();
 
@@ -13,10 +14,13 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-
 const limiter = rateLimit({
   windowMs: 15 * 1000,
   max: 1,
+});
+app.use(express.static("build"));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.get("/:prefix", async (req, res) => {
