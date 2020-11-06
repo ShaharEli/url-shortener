@@ -134,7 +134,10 @@ function App() {
               <UrlItem key={url.link}>
                 original link: {url.originalUrl}
                 <br />
-                Shortened Link: <a href={url.link}>{url.link}</a>
+                Shortened Link:{" "}
+                <a target='_blank' href={url.link}>
+                  {url.link}
+                </a>
               </UrlItem>
             );
           })}
