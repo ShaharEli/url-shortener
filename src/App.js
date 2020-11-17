@@ -108,7 +108,7 @@ function App() {
     <div className='App'>
       <Main>
         <header>
-          <Title>URL Shoretener</Title>
+          <Title>URL Shortener</Title>
         </header>
         <form onSubmit={handleSubmit}>
           <Label>Enter the url that you want to get shorter</Label>
